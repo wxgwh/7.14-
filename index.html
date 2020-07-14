@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="box">
+        <div class="content">
+            <div class="title">
+                <a href="#" style="background-color: #00B262;color: #fff;"class="first">今日疯抢</a>
+                <a href="#" class="first">量版装</a>
+            </div>
+            <div class="con">
+                <div class="one">
+                    <div class="font">
+                        <img src="https://img.alicdn.com/tfs/TB12RqQewMPMeJjy1XdXXasrXXa-23-23.png" alt="">
+                        <span class="font1">零食欢乐购</span>
+                        <span class="font2">爆款直降</span>
+                    </div>
+                    <img src="https://img.alicdn.com/tfs/TB1jNScP6TpK1RjSZKPXXa3UpXa-400-400.jpg" alt="" class="image">
+                </div>
+                <div class="one">
+                    <div class="font">
+                        <img src="https://img.alicdn.com/tfs/TB12RqQewMPMeJjy1XdXXasrXXa-23-23.png" alt="">
+                        <span class="font1">爆款直降</span>
+                        <span class="font2">粮油调味</span>
+                    </div>
+                    <img src="https://img.alicdn.com/tfs/TB1_O_LgSrqK1RjSZK9XXXyypXa-400-400.jpg" alt="" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var flag=true;
+        var links=document.querySelectorAll(".title a");
+        var lists=document.querySelectorAll(".one");
+        function clock(){
+            if(flag==true){
+                lists[0].style.display="none";
+                lists[1].style.display="block";
+                links[0].style.background="#ccc";
+                links[0].style.color="black";
+                links[1].style.background="#00B262";
+                links[1].style.color="#fff";
+                flag=false;
+            }else{
+                lists[1].style.display="none";
+                lists[0].style.display="block";
+                links[1].style.background="#ccc";
+                links[1].style.color="black";
+                links[0].style.background="#00B262";
+                links[0].style.color="#fff";
+                flag=true;
+            }
+        }       
+        setInterval("clock()",5000);
+        for( let i=0;i<links.length;i++){
+            links[i].onmouseover=function(){
+                for(var j=0;j<lists.length;j++){
+                    lists[j].style.display="none";
+                    links[j].style.background="#ccc";
+                    links[j].style.color="black";
+                }
+                lists[i].style.display="block";
+                this.style.background="#00B262";
+                this.style.color="#fff";
+            }
+        }
+    </script>
+</body>
+</html>
